@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fetch('donnees.php') // Récupère les données JSON depuis le backend.
         .then(response => response.json())
-        .then(competence => {
+        .then(competences => {
             if (competences.error) {
                 console.error('Erreur depuis le backend :', competences.error);
                 competenceContainer.innerHTML = `<p>Erreur lors du chargement des competences.</p>`;

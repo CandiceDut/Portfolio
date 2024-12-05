@@ -3,11 +3,11 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #fff8f5;
+    background-color: #275292;
 }
 
 header {
-    background: #351303;
+    background: #03162c;
     color: #fff;
     padding: 10px 20px;
     text-align: center;
@@ -34,7 +34,7 @@ header nav a {
 }
 
 header nav a:hover {
-    background: #351303;
+    background: #03162c;
 }
 
 section {
@@ -94,6 +94,6 @@ section {
 footer {
     text-align: center;
     padding: 10px;
-    background: #351303;
+    background: #03162c;
     color: #fff;
 }

@@ -27,7 +27,10 @@ try {
 
     // Envoyer les études au frontend en JSON
     header("Content-Type: application/json");
+    echo json_encode($competences);
+    echo json_encode($projets);
     echo json_encode($etudes);
+    echo json_encode($experiences);
 
 } catch (PDOException $e) {
     http_response_code(500);
