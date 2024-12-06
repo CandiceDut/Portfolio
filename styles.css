@@ -7,25 +7,39 @@ body {
 }
 
 header {
+    position: fixed; /* Le header reste en haut */
+    top: 0;          /* Attaché au sommet de la page */
+    left: 0;         /* Alignez à gauche */
+    width: 100%;     /* Le header prend toute la largeur */
     background: #03162c;
     color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optionnel : ombre pour différencier */
+    z-index: 1000;   /* S'assurer que le header reste au-dessus des autres éléments */
     padding: 10px 20px;
     text-align: center;
+    height: 80px;    /* Hauteur fixe du header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre pour un effet visuel */
+    align-items: center; /* Centrer verticalement le contenu */
 }
 
-header h1 {
-    margin: 0;
-}
-
-header nav ul {
+nav ul {
+    display: flex; /* Pour afficher les liens horizontalement */
     list-style: none;
+    margin: 0;
     padding: 0;
-    display: flex;
     justify-content: center;
     gap: 15px;
 }
 
-header nav a {
+nav:hover {
+    color: #789dc6;
+}
+
+nav ul li {
+    margin: 0 15px; /* Espacement entre les liens */
+}
+
+nav ul li a {
     color: #fff;
     text-decoration: none;
     padding: 5px 10px;
@@ -33,23 +47,31 @@ header nav a {
     transition: background 0.3s;
 }
 
+header h1 {
+    margin: 0;
+}
+
 header nav a:hover {
     background: #03162c;
 }
 
 section {
-    padding: 20px;
+    padding: 90px;
     text-align: center;
 }
 
-#project-container {
+section ul li {
+    list-style: none;
+}
+
+.projetContainer.innerHTML {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     margin-top: 20px;
 }
 
-.project {
+.projets {
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -58,37 +80,32 @@ section {
     text-align: left;
 }
 
-.project img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.project h3 {
+/*formulaire de contact*/
+form input, form textarea {
+    width: 50%;
     padding: 10px;
-    margin: 0;
-    background: #333;
-    color: #fff;
-    text-align: center;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
 }
 
-.project p {
-    padding: 10px;
+form button {
+    background-color: #1c3a5c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    display: block;  
+    margin: 0 auto;
 }
 
-.project a {
-    display: block;
-    text-align: center;
-    padding: 10px;
-    color: #fff;
-    background: #007BFF;
-    text-decoration: none;
-    border-radius: 0 0 10px 10px;
-    transition: background 0.3s;
-}
-
-.project a:hover {
-    background: #0056b3;
+form button:hover {
+    background-color: #102b49;
 }
 
 footer {

@@ -1,74 +1,31 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const competenceContainer = document.getElementById('competence-container');
-    const projetContainer = document.getElementById('project-container');
-    const etudeContainer = document.getElementById('etude-container');
-    const experienceProContainer = document.getElementById('experiencePro-container');
-
-    // Fonction pour charger les données et afficher les éléments
-    function chargerDonnees(url, container, templateFn) {
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                if (data.error) {
-                    console.error('Erreur depuis le backend :', data.error);
-                    container.innerHTML = `<p>Erreur lors du chargement des données.</p>`;
-                    return;
-                }
-                data.forEach(item => {
-                    const div = document.createElement('div');
-                    div.classList.add(item.type || 'item'); // Ajoutez une classe spécifique si vous en avez besoin
-                    div.innerHTML = templateFn(item);
-                    container.appendChild(div);
-                });
-            })
-            .catch(error => {
-                console.error('Erreur lors du chargement des données :', error);
-                container.innerHTML = `<p>Erreur lors du chargement des données.</p>`;
-            });
+// Récupérer les données depuis le backend
+fetch('donnees.php')
+.then(response => {
+    if (!response.ok) {
+        throw new Error('Erreur lors du chargement des données');
     }
+    return response.json();
+})
+.then(data => {
+    console.log(data);
 
-    // Template pour les compétences
-    function competenceTemplate(competence) {
-        return `
-            <h3>${competence.nom}</h3>
-            <p>${competence.type}</p>
-        `;
-    }
+    // Afficher les données dans la page
+        const competenceContainer = document.getElementById('competences-container');
+        competenceContainer.innerHTML = `
+            <ul>${data.competences.map(c => `<li>${c.nom} - ${c.type}</li>`).join('')}</ul>`;
 
-    // Template pour les projets
-    function projetTemplate(projet) {
-        return `
-            <img src="${projet.image}" alt="${projet.nom}">
-            <h3>${projet.nom}</h3>
-            <p>${projet.date}</p>
-            <p>${projet.description}</p>
-            <a href="${projet.lien}" target="_blank">Voir sur GitHub</a>
-        `;
-    }
+        const projetContainer = document.getElementById('projets-container');
+        projetContainer.innerHTML = `
+            <ul>${data.projets.map(p => `<li>${p.nom}</li> <li>${p.date}</li><li>${p.image}</li><li>${p.description}</li>`).join('')}</ul>`;
 
-    // Template pour les études
-    function etudeTemplate(etude) {
-        return `
-            <h3>${etude.niveau}</h3>
-            <p>${etude.etablissement}</p>
-            <p>${etude.specialite}</p>
-            <p>${etude.lieu}</p>
-        `;
-    }
+        const etudeContainer = document.getElementById('etude-container');
+        etudeContainer.innerHTML = `
+            <ul>${data.etudes.map(e => `<li>${e.nom} à ${e.lieu} (${e.année})</li>`).join('')}</ul>`;
 
-    // Template pour les expériences professionnelles
-    function experienceProTemplate(experiencePro) {
-        return `
-            <h3>${experiencePro.niveau}</h3>
-            <p>${experiencePro.etablissement}</p>
-            <p>${experiencePro.specialite}</p>
-            <p>${experiencePro.lieu}</p>
-        `;
-    }
-
-    // Chargement des données pour chaque catégorie
-    chargerDonnees('competences.php', competenceContainer, competenceTemplate);
-    chargerDonnees('projets.php', projetContainer, projetTemplate);
-    chargerDonnees('etudes.php', etudeContainer, etudeTemplate);
-    chargerDonnees('experiencesPro.php', experienceProContainer, experienceProTemplate);
+        const experienceProContainer = document.getElementById('experiencePro-container');
+        experienceProContainer.innerHTML = `
+            <ul>${data.experiences.map(ex => `<li>${ex.poste} chez ${ex.entreprise} (${ex.durée})</li>`).join('')}</ul>`;
+})
+.catch(error => {
+    console.error('Erreur :', error);
 });
