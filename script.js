@@ -150,17 +150,53 @@ const competences = {
   
   // Dessiner les fleurs lorsque la page est chargée
   document.addEventListener("DOMContentLoaded", drawAllFlowers);
+
+  const track = document.querySelector('.carousel-track');
+  const leftArrow = document.querySelector('.left-arrow');
+  const rightArrow = document.querySelector('.right-arrow');
   
-  projets = {
-    "nom": "Portfolio",
-    "description": "Un site vitrine pour présenter mes projets et mes compétences.",
-    "date": "06/12/2024",
-    "image": "images/portfolio.jpg"},
-    {"nom": "Crochet'Time",
-    "description": "Une application web de vente de doudous et décorations au crochet fait main.",
-    "date": "25/10/2024",
-    "image": "images/crochettime.jpg"}
-  ;
+  // Largeur d'une case incluant l'espacement
+  const itemWidth = document.querySelector('.carousel-item').offsetWidth + 20; // 20 = marge
+  
+  let position = 0; // Position actuelle de défilement
+  
+  // Fonction pour défiler vers la droite
+  rightArrow.addEventListener('click', () => {
+    position -= itemWidth; // On déplace vers la gauche
+    track.style.transform = `translateX(${position}px)`;
+  });
+  
+  // Fonction pour défiler vers la gauche
+  leftArrow.addEventListener('click', () => {
+    position += itemWidth; // On déplace vers la droite
+    track.style.transform = `translateX(${position}px)`;
+  });
+  
+  
+  
+
+  // Ouvrir la pop-up avec l'image agrandie
+  function openModal(imageSrc) {
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("modalImage");
+    modal.style.display = "block";
+    modalImg.src = imageSrc;
+  }
+
+  // Fermer la pop-up
+  function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+      var modal = document.getElementById("myModal");
+      var modalContent = document.getElementsByClassName("modal-content")[0];
+      
+      if (event.target == modal) {  // Vérifie si l'utilisateur clique en dehors de l'image
+          modal.style.display = "none";  // Cacher la pop-up
+      }
+  }
 
 $etudes = {
     "nom": "BUT Informatique",

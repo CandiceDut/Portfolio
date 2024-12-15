@@ -101,6 +101,11 @@ header nav a:hover {
     background: #03162c;
 }
 
+main {
+    padding: 90px;
+    text-align: center;
+}
+
 section {
     padding: 90px;
     text-align: center;
@@ -125,6 +130,119 @@ section ul li {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: left;
 }
+
+/* Conteneur principal */
+.carousel-projets {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 80%; /* Largeur totale du carrousel */
+    margin: 0 auto;
+    overflow: hidden; /* Cache les éléments qui sortent */
+    border: 2px solid #ddd;
+    background-color: #f9f9f9;
+  }
+  
+  /* Flèches */
+  .carousel-arrow {
+    background-color: #1c3a5c;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  
+  .left-arrow {
+    left: 0;
+  }
+  
+  .right-arrow {
+    right: 0;
+  }
+
+  .btn {
+    background-color: #1c3a5c;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    margin: 0 auto;
+  }
+  
+.btn:hover {
+    background-color: #789dc6;
+}
+  
+  /* Piste de défilement */
+  .carousel-track {
+    display: flex;
+    transition: transform 0.4s ease; /* Animation fluide */
+  }
+  
+  /* Élément de chaque case */
+  .carousel-item {
+    min-width: 200px; /* Largeur des cases */
+    margin: 10px;
+    text-align: center;
+    padding: 20px;
+    background-color: #03162c;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .carousel-item:hover {
+    transform: scale(1.01);
+  }
+
+  
+/* Style des images miniatures */
+.thumbnail {
+    width: 80%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    margin: 0 auto; /* Centrer l'image horizontalement */
+
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+}
+
+/* Style de la fenêtre modale (pop-up) */
+.modal {
+    display: none; /* Initialement cachée */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fond sombre */
+    padding-top: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenu de l'image dans la pop-up */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 100%;
+    max-width: 1000px;
+}
+
 
 /*formulaire de contact*/
 form input, form textarea {
@@ -151,7 +269,7 @@ form button {
 }
 
 form button:hover {
-    background-color: #102b49;
+    background-color: #03162c;
 }
 
 footer {

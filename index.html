@@ -40,13 +40,18 @@
 
     <section id="about">
         <h2>A Propos de moi</h2>
-        <p>Je m'appelle Candice Dutournier<br>
+        <p>Je m'appelle Candice Dutournier et je suis actuellement en 2ème année de BUT Informatique à l'IUT de Bayonne et du pays Basque.<br>
             Je cherche un stage de développeuse d’application ou de site web où je pourrais vous apporter<br>
             mes compétences de codage mais aussi apprendre de nouveaux langages et/ou de nouvelles technologies à vos côtés<br>
             pour répondre au mieux à vos attentes.</p>
+        <div style="text-align: center;">
+            <a href="images/CV_Dutournier_Candice.pdf" class="btn-download" >
+                <i class="fas fa-download"></i> Télécharger mon CV
+            </a>
+        </div>
     </section>
 
-    <section id="competences" style="background-color: aquamarine;">
+    <section id="competences">
         <h2>Mes Compétences</h2>
         <div id="competences-container">
         <canvas id="flowerCanvas" width="1300" height="600" ></canvas></div>
@@ -54,7 +59,28 @@
 
     <section id="projects">
         <h2>Mes Projets</h2>
-        <div id="projets-container"></div>
+        <div class="carousel-projets">
+            <!-- <button class="carousel-arrow left-arrow">◀</button> -->
+            
+            <div class="carousel-track">
+              <div class="carousel-item">
+                <img src="images/CovoitEtud.png" width="50%" class="thumbnail" onclick="openModal('CovoitEtud.png')">
+                <h1>COVOIT'ETUD</h1>
+                <h3>En cours</h3>
+                <p>Un site web de covoiturage entre étudiants.</p>
+                <a href="CovoitEtud.html" class="btn btn-primary">En savoir plus</a>
+              </div>
+              <div class="carousel-item">
+                <img src="images/CrochetTime.png" width="50%" class="thumbnail" onclick="openModal('CrochetTime.png')">
+                <h1>Crochet'Time</h1>
+                <h3>Octobre 2024</h3>
+                <p>Une application web de vente de doudous et décorations au crochet fait main.</p>
+                <a href="CrochetTime.html" class="btn btn-primary">En savoir plus</a>
+              </div>
+            </div>
+            
+            <!-- <button class="carousel-arrow right-arrow">▶</button> -->
+        </div>
     </section>
 
     <section id="etudes">
