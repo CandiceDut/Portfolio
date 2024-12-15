@@ -197,12 +197,3 @@ const competences = {
           modal.style.display = "none";  // Cacher la pop-up
       }
   }
-
-$experiences = {
-    "poste": "Agent d'entretien et propreté",
-    "entreprise": "la Mairie de Saint Paul les Dax",
-    "durée": "été 2024"},
-    {"poste": "Castreuse de maïs",
-    "entreprise": "un particulier",
-    "durée": "été 2022/2023/2024"
-};

@@ -111,6 +111,7 @@ main {
 
 section {
     text-align: center;
+    padding-top: 10px;
 }
 
 section ul li {
@@ -327,10 +328,11 @@ form button {
     transition: background-color 0.3s ease;
     display: block;  
     margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 form button:hover {
-    background-color: #03162c;
+    background-color: #789dc6;
 }
 
 footer {
