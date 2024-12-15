@@ -198,15 +198,6 @@ const competences = {
       }
   }
 
-$etudes = {
-    "nom": "BUT Informatique",
-    "lieu": "IUT de Bayonne et du Pays Basque, Anglet",
-    "année": "2023-2026"},
-    {"nom": "Baccalauréat Scientifique, spé physique chimie et biologie écologie",
-    "lieu": "LEGTA Hector Serres, Heugas",
-    "année": "2020-2023"
-};
-
 $experiences = {
     "poste": "Agent d'entretien et propreté",
     "entreprise": "la Mairie de Saint Paul les Dax",
@@ -215,15 +206,3 @@ $experiences = {
     "entreprise": "un particulier",
     "durée": "été 2022/2023/2024"
 };
-
-    const projetContainer = document.getElementById('projets-container');
-    projetContainer.innerHTML = `
-        <ul>${projets.nom} <li>${p.date}</li><li>${p.image}</li><li>${p.description}</li></ul>`;
-
-    const etudeContainer = document.getElementById('etude-container');
-    etudeContainer.innerHTML = `
-        <ul>${data.etudes.map(e => `<li>${e.nom} à ${e.lieu} (${e.année})</li>`).join('')}</ul>`;
-
-    const experienceProContainer = document.getElementById('experiencePro-container');
-    experienceProContainer.innerHTML = `
-        <ul>${data.experiences.map(ex => `<li>${ex.poste} chez ${ex.entreprise} (${ex.durée})</li>`).join('')}</ul>`;

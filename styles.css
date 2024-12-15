@@ -7,8 +7,6 @@ body {
 }
 
 #home {
-    margin: 0;
-    padding: 0;
     width: 100%;
     height: 100vh;
 }
@@ -97,6 +95,11 @@ header h1 {
     margin: 0;
 }
 
+header h1 a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
 header nav a:hover {
     background: #03162c;
 }
@@ -107,7 +110,6 @@ main {
 }
 
 section {
-    padding: 90px;
     text-align: center;
 }
 
@@ -170,6 +172,7 @@ section ul li {
     background-color: #1c3a5c;
     color: #FFFFFF;
     padding: 10px 20px;
+    text-decoration: none;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -201,9 +204,6 @@ section ul li {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  .carousel-item:hover {
-    transform: scale(1.01);
-  }
 
   
 /* Style des images miniatures */
@@ -241,6 +241,67 @@ section ul li {
     display: block;
     width: 100%;
     max-width: 1000px;
+}
+
+
+#experiencePro .container {
+    width: 80%;
+    text-align: center;
+}
+
+#experiencePro ul {
+    display: grid;
+    margin-left: 10%;
+    margin-right: 10%;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  /* Design responsive avec grid */
+    gap: 20px;
+    list-style: none;  /* Supprime les puces par défaut */
+    padding: 0;
+}
+
+#experiencePro ul li {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    position: relative;
+    font-size: 1.2rem;
+}
+
+#experiencePro ul li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#experiencePro ul li strong {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#experiencePro ul li ul {
+    margin-top: 10px;
+    margin-bottom: 0; /* Évite un espace supplémentaire au bas de la sous-liste */
+    list-style: none; 
+}
+
+#experiencePro ul li ul li {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px; /* Espacement entre les éléments des sous-listes */
+    list-style: none; 
+}
+
+/* Ne pas appliquer d'effet de survol ou de transformation sur les sous-listes */
+#experiencePro ul li ul li:hover {
+    transform: none;  /* Désactive l'effet de mouvement */
+}
+
+
+/* Améliorer l'espacement et les effets */
+#experiencePro ul li:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 
